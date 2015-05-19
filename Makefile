@@ -28,7 +28,6 @@ stage : rel
 	$(foreach dep,$(wildcard deps/*), rm -rf rel/confrm/lib/$(shell basename $(dep))-* && ln -sf $(abspath $(dep)) rel/confrm/lib;)
 	$(foreach app,$(wildcard apps/*), rm -rf rel/confrm/lib/$(shell basename $(app))-* && ln -sf $(abspath $(app)) rel/confrm/lib;)
 
-
 ##
 ## Developer targets
 ##
