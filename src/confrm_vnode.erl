@@ -25,6 +25,10 @@ init([Partition]) ->
 
 handle_command(ping, _Sender, State) ->
     {reply, {pong, State#state.partition}, State};
+
+handle_command(stop, _Sender, _State) ->
+    {stop, normal, {}};
+
 handle_command(Message, _Sender, State) ->
     ?PRINT({unhandled_command, Message}),
     {noreply, State}.

@@ -21,3 +21,9 @@
 6. Look at the cluster plan: `dev/dev1/bin/confrm-admin cluster plan`
 7. And commit changes: `dev/dev1/bin/confrm-admin cluster commit`
 8. You can observe progress of balancing the cluster with command: `dev/dev1/bin/confrm-admin member-status`
+
+
+### Tests
+
+1. `make`
+2. `./rebar ct`

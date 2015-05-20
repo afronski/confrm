@@ -2,9 +2,11 @@
 .rebar
 .eunit
 
-# Binaries:
+# Binaries and trashes:
 deps/*
 ebin/*.beam
+logs/
+test/*.beam
 
 # Releases:
 rel/confrm
