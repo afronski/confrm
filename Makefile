@@ -1,4 +1,4 @@
-REBAR = rebar
+REBAR = $(shell pwd)/rebar
 .PHONY: deps
 
 all: deps compile
@@ -27,17 +27,6 @@ xref: all
 stage : rel
 	$(foreach dep,$(wildcard deps/*), rm -rf rel/confrm/lib/$(shell basename $(dep))-* && ln -sf $(abspath $(dep)) rel/confrm/lib;)
 	$(foreach app,$(wildcard apps/*), rm -rf rel/confrm/lib/$(shell basename $(app))-* && ln -sf $(abspath $(app)) rel/confrm/lib;)
-
-##
-## Developer targets
-##
-##  devN - Make a dev build for node N
-##  stagedevN - Make a stage dev build for node N (symlink libraries)
-##  devrel - Make a dev build for 1..$DEVNODES
-##  stagedevrel Make a stagedev build for 1..$DEVNODES
-##
-##  Example, make a 68 node devrel cluster
-##    make stagedevrel DEVNODES=68
 
 .PHONY : stagedevrel devrel
 DEVNODES ?= 4

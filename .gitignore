@@ -1,8 +1,12 @@
-*.beam
+# Build system:
 .rebar
 .eunit
+
+# Binaries:
 deps/*
 ebin/*
+
+# Releases:
 rel/confrm
 dev
 apps/confrm/src/*
