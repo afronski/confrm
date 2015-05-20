@@ -1,13 +1,7 @@
 -module(confrm_app).
-
 -behaviour(application).
 
-%% Application callbacks
--export([start/2, stop/1]).
-
-%% ===================================================================
-%% Application callbacks
-%% ===================================================================
+-export([ start/2, stop/1 ]).
 
 start(_StartType, _StartArgs) ->
     case confrm_sup:start_link() of

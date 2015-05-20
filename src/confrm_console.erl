@@ -1,12 +1,7 @@
-%% @doc Interface for riak_searchng-admin commands.
 -module(confrm_console).
--export([staged_join/1,
-         down/1,
-         ringready/1]).
--ignore_xref([join/1,
-              leave/1,
-              remove/1,
-              ringready/1]).
+
+-export([ staged_join/1, down/1, ringready/1 ]).
+-ignore_xref([ join/1, leave/1, remove/1, ringready/1 ]).
 
 staged_join([NodeStr]) ->
     Node = list_to_atom(NodeStr),
